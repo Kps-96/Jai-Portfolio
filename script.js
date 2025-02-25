@@ -45,9 +45,39 @@ ScrollReveal().reveal('.home-content h1,.about-img',{origin:'left'});
 ScrollReveal().reveal('.home-content p,.about-content',{origin:'right'});
 
 const typed = new Typed('.multiple-text',{
-    strings:['CSE Student at NMIT ','Frontend developer'],
+    strings:['IT Student','UI/UX Designer'],
     typeSpeed:100,
     backSpeed:100,
     backDelay:1000,
     loop:true
 });
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get values from input fields
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let subject = document.getElementById("subject").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    // Validation: Ensure all fields are filled
+    if (name === "" || email === "" || mobile === "" || subject === "" || message === "") {
+        alert("Please fill in all fields before submitting.");
+        return;
+    }
+
+    // Replace with your WhatsApp number (without '+' and spaces)
+    let phoneNumber = "9345319759";
+
+    // Format the WhatsApp message
+    let whatsappMessage = `Hello, I received a new inquiry:%0A%0A👤 Name: ${name}%0A📧 Email: ${email}%0A📱 Mobile: ${mobile}%0A📝 Subject: ${subject}%0A✉️ Message: ${message}`;
+
+    // Open WhatsApp with the pre-filled message
+    let whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${whatsappMessage}`;
+    window.open(whatsappURL, "_blank");
+});
+
+
+document.getElementById("year").textContent = new Date().getFullYear();

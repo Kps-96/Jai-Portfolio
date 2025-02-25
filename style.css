@@ -33,6 +33,7 @@
  section{
     min-height: 100vh;
     padding: 10rem 9% 2rem;
+    float: left;
  }
  .header{
     position: fixed;
@@ -46,6 +47,10 @@
     align-items: center;
     z-index:100 ;
 
+ }
+
+ .services-box p{
+   text-align: justify;
  }
 
  .header.sticky{
@@ -64,6 +69,13 @@
     transition: .3s;
  }
 
+ .imgCont img{
+   width: 350px;
+   height: 350px;
+   border-radius: 20px;
+   margin-left: 220px;
+ }
+
  .navbar a:hover,
  .navbar a.active{
     color: var(--main-color);
@@ -78,6 +90,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+ }
+
+ footer{
+   text-align: center; 
+   padding: 10px; 
+   background: #333; 
+   color: white; 
+   font-size: 14px;
  }
 
  .home-img img{
@@ -329,37 +349,6 @@
    cursor: pointer;
 }
 
-.footer{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-wrap: wrap;
-   padding: 2rem 9%;
-   background: var(--second-bg-color);
-}
-
-.footer-text p{
-   font-size: 1.6rem;
-}
-
-.footer-iconTop a{
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
-   padding: .8rem;
-   background: var(--main-color);
-   border-radius: .8rem;
-   transition: .5s ease;
-}
-
-.footer-iconTop a:hover{
-   box-shadow: 0 0 1rem var(--main-color);
-}
-
-.footer-iconTop a i{
-   font-size: 2.4rem;
-   color: var(--second-bg-color);
-}
 
 @media (max-width:1200px){
    html{
